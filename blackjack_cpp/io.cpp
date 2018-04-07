@@ -1,5 +1,6 @@
 #include <iostream>
-#include "gameMechanicsTypes.h"
+#include "player.h"
+#include "deck.h"
 
 void printWelcomeMessage()
 {
@@ -7,7 +8,7 @@ void printWelcomeMessage()
     std::cin.get();
 }
 
-void printPlayerScore(Player player)
+void printPlayerScore(Player &player)
 {
     std::cout << player.name << ": " << player.score << "\n";
 }
@@ -25,7 +26,6 @@ void printCard(Card &card)
         case RANK_8:
         case RANK_9:
         case RANK_10:       std::cout << card.rank + 2; break;
-
         case RANK_JACK:     std::cout << 'J'; break;
         case RANK_QUEEN:    std::cout << 'Q'; break;
         case RANK_KING:     std::cout << 'K'; break;
