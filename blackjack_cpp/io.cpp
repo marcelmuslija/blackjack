@@ -10,7 +10,7 @@ void printWelcomeMessage()
 
 void printPlayerScore(Player &player)
 {
-    std::cout << player.name << ": " << player.score << "\n";
+    std::cout << player.name << "'s score: " << player.score << "\n";
 }
 
 void printCard(Card &card)
@@ -42,8 +42,42 @@ void printCard(Card &card)
     std::cout << "\n";
 }
 
+void printDraw(Player &player)
+{
+    std::cout << player.name << " draws a card...\t";
+}
+
+void printOptions()
+{
+    std::cout << "Do you wish to hit or stand? Enter 'h' or 's': ";
+}
+
+void printInvalidInput()
+{
+    std::cout << "Invalid input!\n";
+}
+
+void printTurn(Player &player)
+{
+    std::cout << player.name << "'s turn...\n";
+}
+
+void printWinner(bool playerWon)
+{
+    if(playerWon) std::cout << "You won!\n";
+    else std::cout << "Dealer won!";
+}
+
+std::string getChoice()
+{
+    std::string choice;
+    std::cin >> choice;
+    return choice;
+}
+
 std::string getPlayerName()
 {
+    std::cout << "Enter your name: ";
     std::string name;
     std::getline(std::cin, name);
     return name;

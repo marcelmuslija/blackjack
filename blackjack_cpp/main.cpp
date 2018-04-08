@@ -9,7 +9,8 @@ int main()
     printWelcomeMessage();
     Deck deck = createDeck();
     shuffleDeck(deck);
-    playBlackjack(deck);
+    bool playerWon = playBlackjack(deck);
+    printWinner(playerWon);
 
     return 0;
 }
